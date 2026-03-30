@@ -1,0 +1,53 @@
+<article>
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-labelledby="servicos-title">
+    <div class="page-hero__bg" aria-hidden="true"></div>
+    <div class="container page-hero__inner">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ol role="list">
+          <li><a routerLink="/">Início</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">Serviços</li>
+        </ol>
+      </nav>
+      <span class="section-label">O que oferecemos</span>
+      <h1 id="servicos-title" class="page-hero__title">Nossos Serviços</h1>
+      <p class="page-hero__subtitle">Soluções elétricas completas para residências, comércios e indústrias — do projeto ao laudo técnico.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="section services-grid-section" aria-labelledby="services-list-title">
+    <div class="container">
+      <h2 class="sr-only" id="services-list-title">Lista de serviços</h2>
+      <div class="services-grid">
+        @for (service of services; track service.title) {
+          <article class="service-item card">
+            <div class="service-item__header">
+              <span class="service-item__icon" aria-hidden="true">{{ service.icon }}</span>
+              <div class="service-item__tags">
+                @for (tag of service.tags; track tag) {
+                  <span class="badge">{{ tag }}</span>
+                }
+              </div>
+            </div>
+            <h3 class="service-item__title">{{ service.title }}</h3>
+            <p class="service-item__desc">{{ service.description }}</p>
+            <a routerLink="/contato" class="service-item__cta btn btn-outline" [attr.aria-label]="'Solicitar orçamento para ' + service.title">
+              Solicitar Orçamento
+            </a>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BOTTOM -->
+  <section class="cta-bottom section--alt" aria-labelledby="servicos-cta-title">
+    <div class="container cta-bottom__inner">
+      <h2 id="servicos-cta-title" class="cta-bottom__title">Não encontrou o que procura?</h2>
+      <p class="cta-bottom__text">Entre em contato com nossa equipe e descubra como podemos ajudar no seu projeto específico.</p>
+      <a routerLink="/contato" id="servicos-contact-cta" class="btn btn-primary btn-lg">Fale Conosco</a>
+    </div>
+  </section>
+</article>

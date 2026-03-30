@@ -1,0 +1,112 @@
+<article>
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-labelledby="sobre-title">
+    <div class="page-hero__bg" aria-hidden="true"></div>
+    <div class="container page-hero__inner">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ol role="list">
+          <li><a routerLink="/">Início</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">Sobre</li>
+        </ol>
+      </nav>
+      <span class="section-label">Nossa história</span>
+      <h1 id="sobre-title" class="page-hero__title">Quem somos</h1>
+      <p class="page-hero__subtitle">Mais de 15 anos transformando projetos elétricos em soluções seguras, eficientes e inovadoras.</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section story" aria-labelledby="story-title">
+    <div class="container story__inner">
+      <div class="story__content">
+        <span class="section-label">Nossa trajetória</span>
+        <h2 id="story-title" class="section-title">Uma empresa construída sobre confiança técnica</h2>
+        <p class="story__text">
+          A NogueTech nasceu em 2010 com a missão de oferecer soluções elétricas de alto padrão a preços justos. Fundada pelo engenheiro Ricardo Nogue, a empresa cresceu de um pequeno escritório em São Paulo para uma referência regional em engenharia elétrica.
+        </p>
+        <p class="story__text">
+          Ao longo de mais de uma década, executamos mais de 200 projetos — de residências unifamiliares a complexos industriais — sempre priorizando segurança, qualidade e o cumprimento rigoroso das normas técnicas vigentes.
+        </p>
+        <a routerLink="/contato" class="btn btn-primary" id="story-cta">Falar com Especialista</a>
+      </div>
+      <div class="story__visual" aria-hidden="true">
+        <div class="story__stats-card">
+          <div class="story__stat"><strong>2010</strong><span>Ano de fundação</span></div>
+          <div class="story__stat"><strong>200+</strong><span>Projetos entregues</span></div>
+          <div class="story__stat"><strong>15+</strong><span>Anos de mercado</span></div>
+          <div class="story__stat"><strong>50+</strong><span>Cidades atendidas</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MVP -->
+  <section class="section section--alt mvp" aria-labelledby="mvp-title">
+    <div class="container">
+      <header class="section-header" style="text-align:center; margin-inline:auto; max-width:600px">
+        <span class="section-label">Nossos pilares</span>
+        <h2 id="mvp-title" class="section-title">Missão, Visão e Valores</h2>
+      </header>
+      <div class="mvp__cards">
+        <div class="mvp__card">
+          <div class="mvp__icon" aria-hidden="true">🎯</div>
+          <h3 class="mvp__card-title">Missão</h3>
+          <p class="mvp__card-text">Oferecer soluções elétricas seguras, eficientes e inovadoras, superando as expectativas de cada cliente com ética e excelência técnica.</p>
+        </div>
+        <div class="mvp__card mvp__card--highlight">
+          <div class="mvp__icon" aria-hidden="true">🔭</div>
+          <h3 class="mvp__card-title">Visão</h3>
+          <p class="mvp__card-text">Ser reconhecida como a principal referência em engenharia elétrica na região, expandindo nossa atuação e impacto positivo até 2030.</p>
+        </div>
+        <div class="mvp__card">
+          <div class="mvp__icon" aria-hidden="true">⭐</div>
+          <h3 class="mvp__card-title">Valores</h3>
+          <p class="mvp__card-text">Segurança em primeiro lugar, qualidade sem concessões, inovação constante e comprometimento total com clientes e parceiros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section values" aria-labelledby="values-title">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-label">O que nos guia</span>
+        <h2 id="values-title" class="section-title">Nossos Valores</h2>
+      </header>
+      <div class="values__grid">
+        @for (v of values; track v.title) {
+          <div class="value-card">
+            <span class="value-card__icon" aria-hidden="true">{{ v.icon }}</span>
+            <h3 class="value-card__title">{{ v.title }}</h3>
+            <p class="value-card__text">{{ v.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section section--alt team" aria-labelledby="team-title">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-label">As pessoas por trás</span>
+        <h2 id="team-title" class="section-title">Nossa Equipe</h2>
+        <p class="section-subtitle">Profissionais com CREA ativo, dedicados a entregar o melhor em cada projeto.</p>
+      </header>
+      <div class="team__grid">
+        @for (member of team; track member.name) {
+          <article class="team-card">
+            <div class="team-card__avatar" aria-hidden="true">
+              <span>{{ member.name[0] }}</span>
+            </div>
+            <h3 class="team-card__name">{{ member.name }}</h3>
+            <p class="team-card__role">{{ member.role }}</p>
+            <span class="badge">{{ member.crea }}</span>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</article>

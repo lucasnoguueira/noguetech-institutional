@@ -1,0 +1,69 @@
+<article>
+  <!-- HERO -->
+  <section class="page-hero" aria-labelledby="projetos-title">
+    <div class="page-hero__bg" aria-hidden="true"></div>
+    <div class="container page-hero__inner">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ol role="list">
+          <li><a routerLink="/">Início</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">Projetos</li>
+        </ol>
+      </nav>
+      <span class="section-label">Portfólio</span>
+      <h1 id="projetos-title" class="page-hero__title">Projetos Realizados</h1>
+      <p class="page-hero__subtitle">Conheça alguns dos projetos que entregamos com excelência técnica e segurança garantida.</p>
+    </div>
+  </section>
+
+  <!-- FILTER + GRID -->
+  <section class="section" aria-labelledby="projects-filter-label">
+    <div class="container">
+      <!-- Filter -->
+      <div class="filter-bar" role="group" aria-labelledby="projects-filter-label">
+        <span id="projects-filter-label" class="sr-only">Filtrar por categoria</span>
+        @for (cat of categories; track cat) {
+          <button
+            class="filter-btn"
+            [class.filter-btn--active]="activeCategory() === cat"
+            (click)="setCategory(cat)"
+            [attr.aria-pressed]="activeCategory() === cat"
+            type="button"
+          >{{ cat }}</button>
+        }
+      </div>
+
+      <!-- Grid -->
+      <div class="projects-grid" aria-live="polite" aria-atomic="true">
+        @for (project of filteredProjects(); track project.title) {
+          <article class="project-card card">
+            <div class="project-card__visual" aria-hidden="true">
+              <div class="project-card__highlight">{{ project.highlight }}</div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="badge">{{ project.category }}</span>
+                <span class="project-card__year">{{ project.year }}</span>
+              </div>
+              <h2 class="project-card__title">{{ project.title }}</h2>
+              <p class="project-card__desc">{{ project.description }}</p>
+            </div>
+          </article>
+        }
+
+        @empty {
+          <p class="projects-empty">Nenhum projeto encontrado para esta categoria.</p>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-bottom section--alt" aria-labelledby="projetos-cta-title">
+    <div class="container cta-bottom__inner">
+      <h2 id="projetos-cta-title" class="cta-bottom__title">Quer fazer parte do nosso portfólio?</h2>
+      <p class="cta-bottom__text">Solicite um orçamento gratuito e comece seu projeto hoje mesmo.</p>
+      <a routerLink="/contato" id="projetos-cta" class="btn btn-primary btn-lg">Solicitar Orçamento</a>
+    </div>
+  </section>
+</article>

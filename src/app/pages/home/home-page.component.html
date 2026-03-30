@@ -1,0 +1,170 @@
+<!-- ===== HERO ===== -->
+<section class="hero" aria-label="Apresentação da NogueTech">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__bg-circle hero__bg-circle--1"></div>
+    <div class="hero__bg-circle hero__bg-circle--2"></div>
+    <div class="hero__bg-grid"></div>
+  </div>
+
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="hero__badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true"><path d="M13 2 L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Especialistas em Engenharia Elétrica
+      </span>
+      <h1 class="hero__title">
+        Soluções Elétricas de <span class="hero__title-highlight">Alta Performance</span> para seu Projeto
+      </h1>
+      <p class="hero__subtitle">
+        Projetos, instalações e manutenção elétrica com excelência técnica e segurança. Atendemos residências, comércios e indústrias em toda a região.
+      </p>
+      <div class="hero__actions">
+        <a routerLink="/contato" id="hero-cta-primary" class="btn btn-primary btn-lg">
+          Solicitar Orçamento Grátis
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a routerLink="/servicos" id="hero-cta-secondary" class="btn btn-outline btn-lg">
+          Nossos Serviços
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__illustration">
+        <svg viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg" class="hero__svg" aria-hidden="true">
+          <!-- Background card -->
+          <rect x="40" y="40" width="400" height="320" rx="20" fill="#f8f9fa" stroke="#e5e7eb" stroke-width="1"/>
+          <!-- Circuit lines -->
+          <path d="M80 200 L160 200 L160 140 L240 140" stroke="#cb683d" stroke-width="2" fill="none" opacity="0.4"/>
+          <path d="M240 260 L320 260 L320 200 L400 200" stroke="#cb683d" stroke-width="2" fill="none" opacity="0.4"/>
+          <path d="M160 260 L160 200" stroke="#cb683d" stroke-width="2" fill="none" opacity="0.4"/>
+          <path d="M320 140 L320 200" stroke="#cb683d" stroke-width="2" fill="none" opacity="0.4"/>
+          <!-- Nodes -->
+          <circle cx="160" cy="200" r="6" fill="#cb683d" opacity="0.8"/>
+          <circle cx="240" cy="140" r="6" fill="#cb683d" opacity="0.8"/>
+          <circle cx="240" cy="260" r="6" fill="#cb683d" opacity="0.8"/>
+          <circle cx="320" cy="200" r="6" fill="#cb683d" opacity="0.8"/>
+          <!-- Central lightning bolt -->
+          <g transform="translate(215, 155)">
+            <path d="M25 5 L10 25 h14 l-4 18 22-24 h-14 z" fill="#cb683d" opacity="0.9"/>
+          </g>
+          <!-- Stats boxes -->
+          <rect x="70" y="290" width="80" height="50" rx="10" fill="#cb683d" opacity="0.1" stroke="#cb683d" stroke-width="1.5"/>
+          <text x="110" y="312" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#cb683d" text-anchor="middle">200+</text>
+          <text x="110" y="328" font-family="Inter, sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Projetos</text>
+          <rect x="200" y="290" width="80" height="50" rx="10" fill="#cb683d" opacity="0.1" stroke="#cb683d" stroke-width="1.5"/>
+          <text x="240" y="312" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#cb683d" text-anchor="middle">15 anos</text>
+          <text x="240" y="328" font-family="Inter, sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Experiência</text>
+          <rect x="330" y="290" width="80" height="50" rx="10" fill="#cb683d" opacity="0.1" stroke="#cb683d" stroke-width="1.5"/>
+          <text x="370" y="312" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#cb683d" text-anchor="middle">98%</text>
+          <text x="370" y="328" font-family="Inter, sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Satisfação</text>
+          <!-- Decorative dots -->
+          <circle cx="100" cy="80" r="4" fill="#cb683d" opacity="0.3"/>
+          <circle cx="380" cy="80" r="4" fill="#cb683d" opacity="0.3"/>
+          <circle cx="100" cy="160" r="3" fill="#323232" opacity="0.15"/>
+          <circle cx="380" cy="240" r="3" fill="#323232" opacity="0.15"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats section--alt" aria-label="Números da NogueTech">
+  <div class="container stats__grid">
+    @for (stat of stats; track stat.label) {
+      <div class="stat-item">
+        <span class="stat-value">{{ stat.value }}</span>
+        <span class="stat-label">{{ stat.label }}</span>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section services" id="servicos" aria-labelledby="services-title">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label">O que fazemos</span>
+      <h2 class="section-title" id="services-title">Nossos Principais Serviços</h2>
+      <p class="section-subtitle">Soluções completas em engenharia elétrica para atender todas as suas necessidades com segurança e eficiência.</p>
+    </header>
+    <div class="services__grid">
+      @for (service of services; track service.title) {
+        <article class="card service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            @if (service.icon === 'bolt') {
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M13 2 L3 14h9l-1 8 10-12h-9z"/></svg>
+            }
+            @if (service.icon === 'blueprint') {
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            }
+            @if (service.icon === 'solar') {
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            }
+            @if (service.icon === 'shield') {
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            }
+          </div>
+          <h3 class="service-card__title">{{ service.title }}</h3>
+          <p class="service-card__desc">{{ service.description }}</p>
+          <a routerLink="/servicos" class="service-card__link" [attr.aria-label]="'Saiba mais sobre ' + service.title">
+            Saiba mais
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+      }
+    </div>
+    <div class="services__cta">
+      <a routerLink="/servicos" class="btn btn-outline">Ver Todos os Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY NOGUETECH ===== -->
+<section class="section section--alt why" aria-labelledby="why-title">
+  <div class="container why__inner">
+    <div class="why__content">
+      <span class="section-label">Por que nos escolher</span>
+      <h2 class="section-title" id="why-title">Comprometidos com a excelência em cada projeto</h2>
+      <p class="section-subtitle">Combinamos experiência técnica, materiais de qualidade e atendimento personalizado para entregar resultados que superam as expectativas.</p>
+      <div class="why__features">
+        @for (feat of features; track feat.title) {
+          <div class="why__feature">
+            <div class="why__feature-dot" aria-hidden="true"></div>
+            <div>
+              <h3 class="why__feature-title">{{ feat.title }}</h3>
+              <p class="why__feature-desc">{{ feat.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+    <div class="why__visual" aria-hidden="true">
+      <div class="why__image-wrapper">
+        <div class="why__badge-floating">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Qualidade Garantida</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" aria-labelledby="cta-title">
+  <div class="container cta-section__inner">
+    <div class="cta-section__content">
+      <h2 class="cta-section__title" id="cta-title">Pronto para transformar seu projeto em realidade?</h2>
+      <p class="cta-section__subtitle">Fale com nossos especialistas e receba um orçamento personalizado sem compromisso.</p>
+    </div>
+    <div class="cta-section__actions">
+      <a routerLink="/contato" id="cta-contact" class="btn btn-primary btn-lg">
+        Falar com Especialista
+      </a>
+      <a routerLink="/projetos" id="cta-projects" class="btn btn-ghost cta-section__ghost">
+        Ver Projetos
+      </a>
+    </div>
+  </div>
+</section>
