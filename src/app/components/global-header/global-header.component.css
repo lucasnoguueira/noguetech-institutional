@@ -12,7 +12,9 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
-  transition: border-color var(--ease-base), box-shadow var(--ease-base);
+  transition:
+    border-color var(--ease-base),
+    box-shadow var(--ease-base);
 }
 
 .header--scrolled {
@@ -71,7 +73,9 @@
   font-weight: var(--font-medium);
   color: var(--clr-text-muted);
   border-radius: var(--radius-md);
-  transition: color var(--ease-fast), background var(--ease-fast);
+  transition:
+    color var(--ease-fast),
+    background var(--ease-fast);
   position: relative;
 }
 
@@ -132,7 +136,9 @@
   height: 2px;
   background: var(--clr-secondary);
   border-radius: var(--radius-full);
-  transition: transform var(--ease-base), opacity var(--ease-base);
+  transition:
+    transform var(--ease-base),
+    opacity var(--ease-base);
   transform-origin: center;
 }
 
@@ -151,30 +157,39 @@
 
 /* Mobile drawer */
 .header__mobile {
-  position: fixed;
-  top: var(--header-height);
-  right: 0;
-  bottom: 0;
-  width: min(320px, 90vw);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
   background: var(--clr-white);
-  box-shadow: var(--shadow-xl);
-  padding: var(--sp-8) var(--sp-6);
+  box-shadow: var(--shadow-md);
+  padding: var(--sp-8) var(--sp-4);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--sp-6);
-  transform: translateX(100%);
-  transition: transform var(--ease-slow);
   z-index: 999;
+  animation: slideDown 300ms ease-out forwards;
+  transform-origin: top center;
 }
 
-.header__mobile--open {
-  transform: translateX(0);
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mobile__links {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-1);
+  align-items: center;
+  gap: var(--sp-2);
+  width: 100%;
 }
 
 .mobile__link {
@@ -184,7 +199,11 @@
   font-weight: var(--font-medium);
   color: var(--clr-text-muted);
   border-radius: var(--radius-lg);
-  transition: color var(--ease-fast), background var(--ease-fast);
+  transition:
+    color var(--ease-fast),
+    background var(--ease-fast);
+  text-align: center;
+  width: 100%;
 }
 
 .mobile__link:hover,
@@ -194,8 +213,10 @@
 }
 
 .mobile__cta {
-  width: 100%;
+  width: auto;
+  min-width: 250px;
   justify-content: center;
+  text-align: center;
 }
 
 /* Overlay */
@@ -209,8 +230,12 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ==========================================

@@ -53,35 +53,34 @@
   </nav>
 
   <!-- Mobile drawer -->
-  <div
-    id="mobile-nav"
-    class="header__mobile"
-    [class.header__mobile--open]="isMenuOpen()"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Menu de navegação"
-  >
-    <ul role="list" class="mobile__links">
-      @for (item of navItems; track item.path) {
-        <li>
-          <a
-            [routerLink]="item.path"
-            routerLinkActive="mobile__link--active"
-            [routerLinkActiveOptions]="{ exact: item.exact }"
-            class="mobile__link"
-            (click)="closeMenu()"
-            >{{ item.label }}</a
-          >
-        </li>
-      }
-    </ul>
-    <a routerLink="/contato" class="btn btn-primary btn-lg mobile__cta" (click)="closeMenu()">
-      Solicitar Orçamento
-    </a>
-  </div>
-
-  <!-- Overlay -->
   @if (isMenuOpen()) {
+    <div
+      id="mobile-nav"
+      class="header__mobile"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menu de navegação"
+    >
+      <ul role="list" class="mobile__links">
+        @for (item of navItems; track item.path) {
+          <li>
+            <a
+              [routerLink]="item.path"
+              routerLinkActive="mobile__link--active"
+              [routerLinkActiveOptions]="{ exact: item.exact }"
+              class="mobile__link"
+              (click)="closeMenu()"
+              >{{ item.label }}</a
+            >
+          </li>
+        }
+      </ul>
+      <a routerLink="/contato" class="btn btn-primary btn-lg mobile__cta" (click)="closeMenu()">
+        Solicitar Orçamento
+      </a>
+    </div>
+
+    <!-- Overlay -->
     <div class="header__overlay" (click)="closeMenu()" aria-hidden="true"></div>
   }
 </header>
